@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CadastroPessoas
+{
+    public class Funcionario : Pessoa
+    {
+        public decimal Salario;
+
+        public Funcionario(string nome, int idade, decimal salario)
+            : base(nome, idade)
+        {
+            Salario = salario;
+        }
+
+        public decimal CalcularBonus()
+        {
+            return Salario * 0.10m;
+        }
+
+        public override void Apresentar()
+        {
+            Console.WriteLine("Funcionário: " + GetNome());
+            Console.WriteLine("Idade: " + Idade);
+            Console.WriteLine("Salário: " + Salario);
+        }
+    }
+}
